@@ -3,6 +3,7 @@ package test;
 import java.util.Random;
 import java.util.Scanner;
 
+import dominio.Interface;
 import dominio.Ladrao;
 import dominio.Pausas;
 import dominio.Personagem;
@@ -12,6 +13,7 @@ public class jogoV3 {
     public static void main(String[] args) throws Exception {
         Scanner leitor = new Scanner(System.in);
         Random gerador = new Random();
+        Interface tela = new Interface();
         boolean jogoAtivo = true;
 
         // criando personagens
@@ -68,8 +70,8 @@ public class jogoV3 {
                 l1.Roubar(p1);
             }
 
-            p1.status();
-            // Thread.sleep(1800);
+            String[] dados = p1.status();
+            tela.renderizar(dados);
         }
 
     }

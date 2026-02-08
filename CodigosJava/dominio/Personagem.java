@@ -52,10 +52,13 @@ public class Personagem {
 
     // ------PRINTAR STATUS-----
 
-    public void status() {
-        System.out.printf("Energia... %d,\nFome...... %d,\nSono...... %d,\nComida.... %d \n", this.energia, this.fome,
-        this.sono, this.comida);
-        System.out.println("\n=============================================");
+    public String[] status() {
+        String[] linhas = new String[4];
+        linhas[0] = "Energia..." + this.energia;
+        linhas[1] = "Fome......" + this.fome;
+        linhas[2] = "Sono......" + this.fome;
+        linhas[3] = "Comida...." + this.comida;
+        return linhas;
     }
 
     // ------------ get e set ------------
