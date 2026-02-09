@@ -6,10 +6,11 @@ public class Interface {
             String stringAtual = linhas[linha];
             for(int i=0; i<stringAtual.length() ; i++){
                 char caracter = stringAtual.charAt(i);
-                System.out.println(caracter);
+                System.out.print(caracter);
                 Pausas.pausar(50);
             }
-            Pausas.pausar(1500);
+            System.out.println();
+            Pausas.pausar(500);
         }
     }
 }
