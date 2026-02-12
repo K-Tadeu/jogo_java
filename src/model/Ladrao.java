@@ -5,7 +5,7 @@ import java.util.Random;
 public class Ladrao {
 
     private Random gerador = new Random();
-    private String nomeLadrao;
+    // private String nomeLadrao;
     private int comidaLadrao = 0;
 
     public void Roubar(Personagem player1) {

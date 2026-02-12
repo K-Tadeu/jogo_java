@@ -36,8 +36,6 @@ public class Jogo {
         LoopGame();
     }
 
-    // iniciar jogo, loop jogo, encerrar jogo.
-
     public void IniciarGame() {
         System.out.println("Qual é o nome do seu personagem?\n" + "=============================================");
         player1.setNome(leitor.nextLine());
