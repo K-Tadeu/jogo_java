@@ -1,4 +1,4 @@
-package dominio;
+package util;
 public class Pausas {
     public static void pausar(int ms) {
         try {

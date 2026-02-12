@@ -1,30 +1,40 @@
-package dominio;
+package test;
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class Testes {
+import model.Ladrao;
+import model.Personagem;
+import model.TurnoManager;
+import ui.Interface;
+import util.Pausas;
 
-    public static void main(String[] args) {
+public class Main {
+    public static void main(String[] args) throws Exception {
         Scanner leitor = new Scanner(System.in);
         Random gerador = new Random();
-
+        Interface tela = new Interface();
         boolean jogoAtivo = true;
 
+        // criando personagens
         Personagem p1 = new Personagem();
         Ladrao l1 = new Ladrao();
 
+        // criando turnos
         TurnoManager turno = new TurnoManager();
 
         // ------------------------------------------------- //
 
-        // System.out.println("Qual é o nome do seu personagem?\n" + "=============================================");
-        // p1.setNome(leitor.nextLine());
+        // START
+        System.out.println("Qual é o nome do seu personagem?\n" + "=============================================");
+        p1.setNome(leitor.nextLine());
 
-        // System.out.println("Ok, " + p1.getNome() + ", vamos começar");
+        // introdução ao loop do jogo
+        System.out.println("Ok, " + p1.getNome() + ", vamos começar");
         System.out.println("=============================================");
         Pausas.pausar(1800);
 
+        // loop infinito com ações
         while (jogoAtivo) {
             System.out.println("O que voce deseja fazer?");
             Pausas.pausar(500);
@@ -60,8 +70,8 @@ public class Testes {
                 l1.Roubar(p1);
             }
 
-            p1.status();
-            
+            String[] dados = p1.status();
+            tela.renderizar(dados);
         }
 
     }

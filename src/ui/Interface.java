@@ -1,4 +1,6 @@
-package dominio;
+package ui;
+
+import util.Pausas;
 
 public class Interface {
     public void renderizar(String[] linhas){

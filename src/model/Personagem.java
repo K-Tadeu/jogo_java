@@ -1,5 +1,7 @@
-package dominio;
+package model;
 import java.util.Random;
+
+import util.Pausas;
 
 public class Personagem {
     Random gerador = new Random();
