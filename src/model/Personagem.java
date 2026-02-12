@@ -1,4 +1,5 @@
 package model;
+
 import java.util.Random;
 
 import util.Pausas;
@@ -25,7 +26,6 @@ public class Personagem {
         }
     }
 
-    // -----DIMINUIR SONO-----
     public void dormir() {
         if (sono >= 1) {
             System.out.println(nome + " esta dormindo...");
@@ -37,7 +37,6 @@ public class Personagem {
         }
     }
 
-    // -----DIMINUIR FOME-----
     public void comer() {
         if (fome == 0) {
             System.out.println("Sem fome...");
@@ -52,8 +51,6 @@ public class Personagem {
         }
     }
 
-    // ------PRINTAR STATUS-----
-
     public String[] status() {
         String[] linhas = new String[4];
         linhas[0] = "Energia..." + this.energia;
@@ -63,42 +60,44 @@ public class Personagem {
         return linhas;
     }
 
-    // ------------ get e set ------------
+    // ---------- GET ----------
 
     public String getNome() {
         return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public int getComida() {
         return comida;
     }
 
-    public void setComida(int comida) {
-        this.comida = comida;
-    }
-
     public int getEnergia() {
         return energia;
-    }
-
-    public void setEnergia(int energia) {
-        this.energia = energia;
     }
 
     public int getFome() {
         return fome;
     }
 
-    public void setFome(int fome) {
-        this.fome = fome;
-    }
-
     public int getSono() {
         return sono;
+    }
+
+    // ---------- SET ----------
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setComida(int comida) {
+        this.comida = comida;
+    }
+
+    public void setEnergia(int energia) {
+        this.energia = energia;
+    }
+
+    public void setFome(int fome) {
+        this.fome = fome;
     }
 
     public void setSono(int sono) {
