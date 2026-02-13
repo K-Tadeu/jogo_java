@@ -11,8 +11,9 @@ public class Personagem {
     private int fome = 0;
     private int sono = 0;
     private int comida = 0;
+    private int vida = 0;
 
-    // -----AUMENTAR COMIDA-----
+    // ------------------ AÇÕES DO PERSONAGEM ------------------------
 
     public void cacar() {
         if (energia >= 2) {
@@ -49,6 +50,23 @@ public class Personagem {
             Pausas.pausar(1800);
             energia = Math.min(energia + 1, 10);
         }
+    }
+
+    // ---------------------------------------------------------------
+
+    public void verificarCondicoes(Personagem player1) {
+
+        if (energia < 0) {
+            vida -= 10;
+        } else if (fome == 10) {
+            vida -= 20;
+        } else if (sono >= 10) {
+            vida -= 10;
+        }
+    }
+
+    public boolean estaVivo() {
+        return vida > 0;
     }
 
     public String[] status() {
@@ -103,7 +121,5 @@ public class Personagem {
     public void setSono(int sono) {
         this.sono = sono;
     }
-
-    // -------------------------------------------
 
 }

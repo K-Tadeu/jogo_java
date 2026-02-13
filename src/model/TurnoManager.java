@@ -11,7 +11,6 @@ public class TurnoManager {
         turnoCont++;
     }
 
-    // troca o período para manha e noite
     public void manhaNoite() {
         turnoNoDia = (turnoNoDia + 1) % 10;
 

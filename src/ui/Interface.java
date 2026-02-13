@@ -3,6 +3,7 @@ package ui;
 import util.Pausas;
 
 public class Interface {
+
     public void renderizar(String[] linhas){
         for(int linha = 0; linha < linhas.length; linha++){
             String stringAtual = linhas[linha];
@@ -14,5 +15,13 @@ public class Interface {
             System.out.println();
             Pausas.pausar(500);
         }
+    }
+
+    public void gameOver(){
+        String[] arrayGameOver = new String[3];
+        arrayGameOver[0] = "=================================";
+        arrayGameOver[1] = "----------- GAME OVER -----------";
+        arrayGameOver[2] = "=================================";
+        renderizar(arrayGameOver);
     }
 }

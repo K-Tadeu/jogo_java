@@ -73,6 +73,11 @@ public class Jogo {
             }
             Pausas.pausar(1500);
 
+            if(!player1.estaVivo()){
+                tela.gameOver();
+                jogoAtivo = false;
+            }
+
             ladrao1.ChanceRoubar(player1);
 
             String[] dados = player1.status();
