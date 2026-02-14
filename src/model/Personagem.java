@@ -11,7 +11,7 @@ public class Personagem {
     private int fome = 0;
     private int sono = 0;
     private int comida = 0;
-    private int vida = 0;
+    private int vida = 100;
 
     // ------------------ AÇÕES DO PERSONAGEM ------------------------
 
