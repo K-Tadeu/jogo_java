@@ -1,52 +1,52 @@
 package app;
 
-import java.util.Random;
 import java.util.Scanner;
 
 import model.Ladrao;
 import model.Personagem;
 import model.TurnoManager;
-import ui.Interface;
+import ui.InterfaceMenus;
+import ui.InterfacePersonagem;
 import util.Pausas;
 
 public class Jogo {
 
     private Scanner leitor;
-    private Interface tela;
+    private InterfaceMenus menu;
+    private InterfacePersonagem playerInterface;
     private Personagem player1;
     private Ladrao ladrao1;
     private TurnoManager turno;
     private boolean jogoAtivo = true;
 
+    private static final int pausaIntro = 1800;
+    private static final int pausaMenu = 500;
+    private static final int pausaPosMenu = 1500;
+
     public Jogo() {
         leitor = new Scanner(System.in);
-        tela = new Interface();
+        menu = new InterfaceMenus();
+        playerInterface = new InterfacePersonagem();
         player1 = new Personagem();
         ladrao1 = new Ladrao();
         turno = new TurnoManager();
     }
 
     public void game() {
-        IniciarGame();
-
-        System.out.println("Ok, " + player1.getNome() + ", vamos começar");
-        System.out.println("=============================================");
-        Pausas.pausar(1800);
-
-        LoopGame();
+        nomePersonagem();
+        menu.telaInicio(player1);
+        loopGame();
     }
 
-    public void IniciarGame() {
-        System.out.println("Qual é o nome do seu personagem?\n" + "=============================================");
+    public void nomePersonagem() {
+        menu.telaNomePersonagem();
         player1.setNome(leitor.nextLine());
     }
 
-    public void LoopGame() {
+    public void loopGame() {
         while (jogoAtivo) {
 
-            System.out.println("O que voce deseja fazer?");
-            Pausas.pausar(500);
-            System.out.println("1 = caçar | 2 = comer | 3 = dormir --- encerrar ");
+            menu.telaLoopOpcao();
 
             String opcao = leitor.next();
 
@@ -67,21 +67,22 @@ public class Jogo {
                     turno.statusTurno();
                     break;
                 case "encerrar":
-                    System.out.println("Obrigado por jogar, voce encerrou o jogo com: ");
+                    menu.encerrarGame();
                     jogoAtivo = false;
 
             }
-            Pausas.pausar(1500);
+            
+            Pausas.pausar(pausaPosMenu);
 
-            if(!player1.estaVivo()){
-                tela.gameOver();
+            if (!player1.estaVivo()) {
+                menu.gameOver();
                 jogoAtivo = false;
+            } else if (jogoAtivo) {
+                ladrao1.chanceRoubar(player1);
             }
 
-            ladrao1.ChanceRoubar(player1);
-
-            String[] dados = player1.status();
-            tela.renderizar(dados);
+            playerInterface.dadosPersonagem(player1);
+            
         }
 
     }
