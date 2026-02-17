@@ -15,40 +15,48 @@ public class Personagem {
 
     // ------------------ AÇÕES DO PERSONAGEM ------------------------
 
-    public void cacar() {
+    public boolean cacar() {
+
         if (energia >= 2) {
             energia -= 2;
             comida += gerador.nextInt(1, 3);
             fome = Math.min(fome + 1, 10);
             sono = Math.min(sono + 1, 10);
             System.out.println(nome + " esta caçando...");
+            return true;
         } else {
-            System.out.println(nome + "esta sem energia para caçar");
+            System.out.println(nome + " esta sem energia para caçar");
+            return false;
         }
     }
 
-    public void dormir() {
+        public boolean dormir() {
         if (sono >= 1) {
             System.out.println(nome + " esta dormindo...");
             sono--;
             energia = energia + 1 <= 10 ? energia + 1 : 10;
             Pausas.pausar(1800);
+            return true;
         } else {
             System.out.println(nome + " esta sem sono...");
+            return false;
         }
     }
 
-    public void comer() {
+    public boolean comer() {
         if (fome == 0) {
             System.out.println("Sem fome...");
+            return false;
         } else if (comida == 0) {
             System.out.println("Sem comida! Vai cacar");
+            return false;
         } else {
             System.out.println(nome + " esta comendo...");
             --fome;
             --comida;
             Pausas.pausar(1800);
             energia = Math.min(energia + 1, 10);
+            return true;
         }
     }
 
@@ -70,11 +78,12 @@ public class Personagem {
     }
 
     public String[] status() {
-        String[] linhas = new String[4];
-        linhas[0] = "Energia..." + this.energia;
-        linhas[1] = "Fome......" + this.fome;
-        linhas[2] = "Sono......" + this.fome;
-        linhas[3] = "Comida...." + this.comida;
+        String[] linhas = {
+                "Energia..." + this.energia,
+                "Fome......" + this.fome,
+                "Sono......" + this.fome,
+                "Comida...." + this.comida
+        };
         return linhas;
     }
 

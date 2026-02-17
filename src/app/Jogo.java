@@ -19,8 +19,8 @@ public class Jogo {
     private TurnoManager turno;
     private boolean jogoAtivo = true;
 
-    private static final int pausaIntro = 1800;
-    private static final int pausaMenu = 500;
+    // private static final int pausaIntro = 1800;
+    // private static final int pausaMenu = 500;
     private static final int pausaPosMenu = 1500;
 
     public Jogo() {
@@ -52,26 +52,32 @@ public class Jogo {
 
             switch (opcao) {
                 case "1":
-                    player1.cacar();
-                    turno.avancarTurno();
-                    turno.statusTurno();
+                    boolean sucessoCaca = player1.cacar();
+                    if (sucessoCaca) {
+                        turno.avancarTurno();
+                        turno.statusTurno();
+                    }
                     break;
                 case "2":
-                    player1.comer();
-                    turno.avancarTurno();
-                    turno.statusTurno();
+                    boolean sucessoComer = player1.comer();
+                    if (sucessoComer) {
+                        turno.avancarTurno();
+                        turno.statusTurno();
+                    }
                     break;
                 case "3":
-                    player1.dormir();
-                    turno.avancarTurno();
-                    turno.statusTurno();
+                    boolean sucessoDormir = player1.dormir();
+                    if (sucessoDormir) {
+                        turno.avancarTurno();
+                        turno.statusTurno();
+                    }
                     break;
                 case "encerrar":
                     menu.encerrarGame();
                     jogoAtivo = false;
 
             }
-            
+
             Pausas.pausar(pausaPosMenu);
 
             if (!player1.estaVivo()) {
@@ -82,7 +88,7 @@ public class Jogo {
             }
 
             playerInterface.dadosPersonagem(player1);
-            
+
         }
 
     }

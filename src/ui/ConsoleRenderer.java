@@ -10,7 +10,7 @@ public class ConsoleRenderer {
             for (int i = 0; i < stringAtual.length(); i++) {
                 char caracter = stringAtual.charAt(i);
                 System.out.print(caracter);
-                Pausas.pausar(50);
+                Pausas.pausar(35);
             }
             System.out.println();
             Pausas.pausar(500);
