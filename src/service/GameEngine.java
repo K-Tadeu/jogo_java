@@ -1,15 +1,14 @@
-package app;
+package service;
 
 import java.util.Scanner;
 
 import model.Ladrao;
 import model.Personagem;
-import model.TurnoManager;
 import ui.InterfaceMenus;
 import ui.InterfacePersonagem;
 import util.Pausas;
 
-public class Jogo {
+public class GameEngine {
 
     private Scanner leitor;
     private InterfaceMenus menu;
@@ -23,7 +22,7 @@ public class Jogo {
     // private static final int pausaMenu = 500;
     private static final int pausaPosMenu = 1500;
 
-    public Jogo() {
+    public GameEngine() {
         leitor = new Scanner(System.in);
         menu = new InterfaceMenus();
         playerInterface = new InterfacePersonagem();
@@ -32,7 +31,7 @@ public class Jogo {
         turno = new TurnoManager();
     }
 
-    public void game() {
+    public void run() {
         nomePersonagem();
         menu.telaInicio(player1);
         loopGame();

@@ -1,4 +1,4 @@
-package model;
+package service;
 public class TurnoManager {
     private int turnoCont;
     private int turnoNoDia;

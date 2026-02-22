@@ -1,4 +1,4 @@
-package ui;
+package service;
 
 import util.Pausas;
 
@@ -26,6 +26,4 @@ public class ConsoleRenderer {
             Pausas.pausar(500);
         }
     }
-
-
 }

@@ -1,6 +1,7 @@
 package ui;
 
 import model.Personagem;
+import service.ConsoleRenderer;
 
 public class InterfacePersonagem {
 
