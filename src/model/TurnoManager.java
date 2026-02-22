@@ -6,7 +6,6 @@ public class TurnoManager {
     private int dias = 1;
     private boolean ehManha = true;
 
-    // adiciona um turno
     public void addTurno() {
         turnoCont++;
     }
@@ -40,17 +39,14 @@ public class TurnoManager {
         System.out.println("Turno: " + turnoCont);
     }
 
-    // retorna a contagem de turnos
     public int getTurnoCont() {
         return turnoCont;
     }
 
-    // definir contagem de turnos em outras classes
     public void setTurnoCont(int turnoCont) {
         this.turnoCont = turnoCont;
     }
 
-    // retorna o periodo atual (manhã ou noite)
     public String getPeriodo() {
         return periodo;
     }

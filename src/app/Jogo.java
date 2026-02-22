@@ -54,6 +54,7 @@ public class Jogo {
                 case "1":
                     boolean sucessoCaca = player1.cacar();
                     if (sucessoCaca) {
+                        playerInterface.telaCacarSucesso(player1);
                         turno.avancarTurno();
                         turno.statusTurno();
                     }
