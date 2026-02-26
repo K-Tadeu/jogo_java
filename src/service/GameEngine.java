@@ -4,15 +4,15 @@ import java.util.Scanner;
 
 import model.Ladrao;
 import model.Personagem;
-import ui.InterfaceMenus;
-import ui.InterfacePersonagem;
 import util.Pausas;
+import view.menuView;
+import view.personagemView;
 
 public class GameEngine {
 
     private Scanner leitor;
-    private InterfaceMenus menu;
-    private InterfacePersonagem playerInterface;
+    private menuView menu;
+    private personagemView playerInterface;
     private Personagem player1;
     private Ladrao ladrao1;
     private TurnoManager turno;
@@ -24,8 +24,8 @@ public class GameEngine {
 
     public GameEngine() {
         leitor = new Scanner(System.in);
-        menu = new InterfaceMenus();
-        playerInterface = new InterfacePersonagem();
+        menu = new menuView();
+        playerInterface = new personagemView();
         player1 = new Personagem();
         ladrao1 = new Ladrao();
         turno = new TurnoManager();

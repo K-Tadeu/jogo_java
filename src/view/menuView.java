@@ -1,9 +1,9 @@
-package ui;
+package view;
 
 import model.Personagem;
 import service.ConsoleRenderer;
 
-public class InterfaceMenus {
+public class menuView {
 
     ConsoleRenderer renderer = new ConsoleRenderer();
     
