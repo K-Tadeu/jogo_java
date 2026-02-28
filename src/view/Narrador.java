@@ -2,10 +2,10 @@ package view;
 
 import service.ConsoleRenderer;
 
-public class IntroView {
+public class Narrador {
     ConsoleRenderer renderer = new ConsoleRenderer();
 
-    public void imprimeIntro() {
+    public void intro() {
         String[] intro = {
                 "Você acorda em uma floresta desconhecida.",
                 "O ar está frio.",

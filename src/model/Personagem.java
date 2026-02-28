@@ -82,7 +82,7 @@ public class Personagem {
                 "Energia..." + this.energia,
                 "Fome......" + this.fome,
                 "Sono......" + this.sono,
-                "Comida...." + this.comida
+                "Comida...." + this.comida + "\n"
         };
         return linhas;
     }

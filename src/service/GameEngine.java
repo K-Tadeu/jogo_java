@@ -5,16 +5,16 @@ import java.util.Scanner;
 import model.Ladrao;
 import model.Personagem;
 import util.Pausas;
-import view.IntroView;
+import view.Narrador;
 import view.MenuView;
 import view.PersonagemView;
 
 public class GameEngine {
 
-    private Scanner leitor;
+    private Scanner input;
     private MenuView menu;
-    private IntroView intro;
-    private PersonagemView playerInterface;
+    private Narrador narrador;
+    private PersonagemView personagemView;
     private Personagem player1;
     private Ladrao ladrao1;
     private TurnoManager turno;
@@ -25,18 +25,17 @@ public class GameEngine {
     private static final int pausaPosMenu = 1500;
 
     public GameEngine() {
-        leitor = new Scanner(System.in);
+        input = new Scanner(System.in);
         menu = new MenuView();
-        intro = new IntroView();
-        playerInterface = new PersonagemView();
+        narrador = new Narrador();
+        personagemView = new PersonagemView();
         player1 = new Personagem();
         ladrao1 = new Ladrao();
         turno = new TurnoManager();
     }
 
-    public void run() {
-        
-        intro.imprimeIntro();
+    public void run() {     
+        narrador.intro();
         nomePersonagem();
         menu.telaInicio(player1);
         loopGame();
@@ -44,7 +43,7 @@ public class GameEngine {
 
     public void nomePersonagem() {
         menu.telaNomePersonagem();
-        player1.setNome(leitor.nextLine());
+        player1.setNome(input.nextLine());
     }
 
     public void loopGame() {
@@ -52,13 +51,13 @@ public class GameEngine {
 
             menu.telaLoopOpcao();
 
-            String opcao = leitor.next();
+            String opcao = input.next();
 
             switch (opcao) {
                 case "1":
                     boolean sucessoCaca = player1.cacar();
                     if (sucessoCaca) {
-                        playerInterface.telaCacarSucesso(player1);
+                        personagemView.telaCacarSucesso(player1);
                         turno.avancarTurno();
                         turno.statusTurno();
                     }
@@ -92,7 +91,7 @@ public class GameEngine {
                 ladrao1.chanceRoubar(player1);
             }
 
-            playerInterface.dadosPersonagem(player1);
+            personagemView.dadosPersonagem(player1);
 
         }
 

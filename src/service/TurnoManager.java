@@ -1,7 +1,9 @@
 package service;
+
 public class TurnoManager {
+    private ConsoleRenderer renderer = new ConsoleRenderer();
     private int turnoCont;
-    private int turnoNoDia;
+    private int turnoDentroDoDia;
     private String periodo = "Manhã";
     private int dias = 1;
     private boolean ehManha = true;
@@ -11,9 +13,9 @@ public class TurnoManager {
     }
 
     public void manhaNoite() {
-        turnoNoDia = (turnoNoDia + 1) % 10;
+        turnoDentroDoDia = (turnoDentroDoDia + 1) % 10;
 
-        if (turnoNoDia < 5) {
+        if (turnoDentroDoDia < 5) {
             ehManha = true;
             periodo = "Manhã";
         } else {
@@ -23,7 +25,7 @@ public class TurnoManager {
     }
 
     public void proxDia() {
-        if (turnoNoDia == 0) {
+        if (turnoDentroDoDia == 0) {
             dias++;
         }
     }
@@ -35,20 +37,23 @@ public class TurnoManager {
     }
 
     public void statusTurno() {
-        System.out.println(periodo);
-        System.out.println("Turno: " + turnoCont);
+        String[] arrayStatusTurno = {
+                periodo,
+                "Turno: " + turnoCont + "\n"
+        };
+        renderer.renderizar(arrayStatusTurno);
     }
 
     public int getTurnoCont() {
         return turnoCont;
     }
 
-    public void setTurnoCont(int turnoCont) {
-        this.turnoCont = turnoCont;
-    }
-
     public String getPeriodo() {
         return periodo;
+    }
+
+    public void setTurnoCont(int turnoCont) {
+        this.turnoCont = turnoCont;
     }
 
 }

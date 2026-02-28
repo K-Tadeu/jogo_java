@@ -6,13 +6,12 @@ import service.ConsoleRenderer;
 public class MenuView {
 
     ConsoleRenderer renderer = new ConsoleRenderer();
-    String separarTela = "===============================================\n";
 
     public void telaNomePersonagem() {
         
         String[] arrayNomePersonagem = {
-                "Qual o nome do seu personagem?",
-                separarTela
+                "Escreva seu nome na história… se conseguir sobreviver.",
+                "\n"
         };
         renderer.renderizar(arrayNomePersonagem);
     }
@@ -21,10 +20,10 @@ public class MenuView {
         String[] arrayTelaInicio = {
                 "Muito bem, " + player1.getNome(),
                 "Está preparado?",
-                separarTela,
+                "\n",
                 "Seu único objetivo (por enquanto), é não morrer de fome ou sono.",
                 "Quando fome ou sono chega a 10, você perde vida... Cuidado!",
-                separarTela
+                "\n"
         };
         renderer.renderizar(arrayTelaInicio);
     }
