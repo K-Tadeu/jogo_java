@@ -45,10 +45,8 @@ public class Personagem {
         if (fome == 0) {
             return false;
         } else if (comida == 0) {
-            System.out.println("Sem comida! Vai cacar");
             return false;
         } else {
-            System.out.println(nome + " esta comendo...");
             --fome;
             --comida;
             Pausas.pausar(1800);
