@@ -143,6 +143,25 @@ public class Narrador {
         renderer.renderizar(arrayRoubarSucesso);
     }
 
+        public void falaOpcaoInvalida(){
+            String[][] arrayOpcaoInvalida = 
+            {
+                {
+                    "Você tenta fazer algo... mas nem a floresta entendeu.",
+                    "Escolha uma opção válida antes que algo escolha por você."
+                },
+                {
+                    "Essa não é uma habilidade desbloqueada.",
+                    "Tente novamente usando um número válido."
+                },
+                {
+                    "A floresta observa sua indecisão...",
+                    "Mas digitar aleatoriamente não vai salvá-lo"
+                }
+            };
+            renderer.renderizar(arrayOpcaoInvalida[random.nextInt(0,2)]);
+        }
+
         public void encerrarGame(){
         String[] arrayEncerrarGame = {
             "A floresta finalmente silencia.",

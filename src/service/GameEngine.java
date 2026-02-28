@@ -85,7 +85,8 @@ public class GameEngine {
                 case "encerrar":
                     narrador.encerrarGame();
                     jogoAtivo = false;
-
+                default:
+                    narrador.falaOpcaoInvalida();
             }
 
             Pausas.pausar(pausaPosMenu);
