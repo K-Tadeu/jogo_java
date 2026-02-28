@@ -3,7 +3,7 @@ package view;
 import model.Personagem;
 import service.ConsoleRenderer;
 
-public class personagemView {
+public class PersonagemView {
 
     ConsoleRenderer renderer = new ConsoleRenderer();
 

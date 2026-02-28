@@ -3,14 +3,13 @@ package view;
 import model.Personagem;
 import service.ConsoleRenderer;
 
-public class menuView {
+public class MenuView {
 
     ConsoleRenderer renderer = new ConsoleRenderer();
-    
-
     String separarTela = "===============================================\n";
 
     public void telaNomePersonagem() {
+        
         String[] arrayNomePersonagem = {
                 "Qual o nome do seu personagem?",
                 separarTela
@@ -20,8 +19,8 @@ public class menuView {
 
     public void telaInicio(Personagem player1) {
         String[] arrayTelaInicio = {
-                "Bem-vindo, " + player1.getNome(),
-                "Vamos começar!",
+                "Muito bem, " + player1.getNome(),
+                "Está preparado?",
                 separarTela,
                 "Seu único objetivo (por enquanto), é não morrer de fome ou sono.",
                 "Quando fome ou sono chega a 10, você perde vida... Cuidado!",
