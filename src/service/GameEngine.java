@@ -50,23 +50,29 @@ public class GameEngine {
         while (jogoAtivo) {
 
             menu.telaLoopOpcao();
-
             String opcao = input.next();
 
             switch (opcao) {
                 case "1":
                     boolean sucessoCaca = player1.cacar();
                     if (sucessoCaca) {
-                        narrador.telaCacarSucesso(player1);
+                        narrador.falaCacarSucesso(player1);
                         turno.avancarTurno();
                         turno.statusTurno();
+                    }else{
+                        narrador.falaCacarFalha();
                     }
                     break;
                 case "2":
                     boolean sucessoComer = player1.comer();
                     if (sucessoComer) {
+                        narrador.falaComerSucesso();
                         turno.avancarTurno();
                         turno.statusTurno();
+                    }else if(!sucessoComer && player1.getComida() == 0){
+                        narrador.falaComerSemComida();
+                    }else{
+                        narrador.falaComerSemFome();
                     }
                     break;
                 case "3":

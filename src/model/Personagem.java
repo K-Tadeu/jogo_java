@@ -7,9 +7,9 @@ import util.Pausas;
 public class Personagem {
     Random gerador = new Random();
     private String nome;
-    private int energia = 10;
-    private int fome = 0;
-    private int sono = 0;
+    private int energia = 5;
+    private int fome = 5;
+    private int sono = 5;
     private int comida = 0;
     private int vida = 100;
 
@@ -22,10 +22,8 @@ public class Personagem {
             comida += gerador.nextInt(1, 3);
             fome = Math.min(fome + 1, 10);
             sono = Math.min(sono + 1, 10);
-            System.out.println(nome + " esta caçando...");
             return true;
         } else {
-            System.out.println(nome + " esta sem energia para caçar");
             return false;
         }
     }
@@ -45,7 +43,6 @@ public class Personagem {
 
     public boolean comer() {
         if (fome == 0) {
-            System.out.println("Sem fome...");
             return false;
         } else if (comida == 0) {
             System.out.println("Sem comida! Vai cacar");

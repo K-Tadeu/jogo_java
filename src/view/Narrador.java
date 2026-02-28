@@ -29,7 +29,8 @@ public class Narrador {
 
     // Narração do personagem
 
-    public void telaCacarSucesso(Personagem player1) {
+    //--- Caça -------------------------------------------------------------
+    public void falaCacarSucesso(Personagem player1) {
          String[][] arrayTextosCacarSucesso =
         {
             {
@@ -48,7 +49,7 @@ public class Narrador {
         renderer.renderizar(arrayTextosCacarSucesso[random.nextInt(0,2)]);
     }
 
-    public void telaCacarFalha() {
+    public void falaCacarFalha() {
         String[][] arrayTextosCacarFalha = 
         {
             {
@@ -56,7 +57,7 @@ public class Narrador {
                 "Sem descanso, não há sobrevivência."
             },
             {
-                "Você dá alguns passos na floresta…",
+                "Você dá alguns passos na floresta...",
                 "Mas o cansaço vence. Agora não é hora de caçar."
 
             },
@@ -65,7 +66,63 @@ public class Narrador {
                 "Você não tem forças para continuar a caçada."
             }
         };
-        renderer.renderizar(arrayTextosCacarFalha[random.nextInt(0,3)]);
+        renderer.renderizar(arrayTextosCacarFalha[random.nextInt(0,2)]);
+    }
+
+    //--- Comer -------------------------------------------------------------
+
+    public void falaComerSucesso(){
+        String[][] arrayTextosComerSucesso = {
+            {
+                "Você mastiga lentamente, saboreando cada pedaço.",
+                "A sensação de fraqueza começa a desaparecer."
+            },
+            {
+                "O cheiro da comida traz conforto.",
+                "Seu corpo agradece pelo sustento."
+            },
+            {
+                "Cada mordida reduz o vazio no seu estômago.",
+                "Você se sente um pouco mais estável."
+            }
+        };
+        renderer.renderizar(arrayTextosComerSucesso[random.nextInt(0,2)]);
+    }
+
+        public void falaComerSemComida(){
+        String[][] arrayTextosComerSemComida = {
+            {
+                "Você abre sua mochila...",
+                "Mas ela está vazia"
+            },
+            {
+                "Sem comida!",
+                "Talvez seja hora de caçar"
+            },
+            {
+                "Algumas migalhas caem da sua bolsa",
+                "É tudo o que restou."
+            }
+        };
+        renderer.renderizar(arrayTextosComerSemComida[random.nextInt(0,2)]);
+    }
+
+            public void falaComerSemFome(){
+        String[][] arrayTextosComerSemFome = {
+            {
+                "Você olha para a comida em suas mãos...",
+                "Mas seu estômago está tranquilo. Agora não é necessário."
+            },
+            {
+                "Seu corpo não pede alimento.",
+                "Talvez seja melhor guardar para depois."
+            },
+            {
+                "Você pensa em comer...",
+                "Mas seu estômago não concorda."
+            }
+        };
+        renderer.renderizar(arrayTextosComerSemFome[random.nextInt(0,2)]);  
     }
 
     // Narração do ladrão
