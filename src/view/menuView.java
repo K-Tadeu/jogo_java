@@ -20,10 +20,11 @@ public class MenuView {
         String[] arrayTelaInicio = {
                 "Muito bem, " + player1.getNome(),
                 "Está preparado?",
-                "\n",
+                "",
                 "Seu único objetivo (por enquanto), é não morrer de fome ou sono.",
                 "Quando fome ou sono chega a 10, você perde vida... Cuidado!",
-                "\n"
+                "",
+
         };
         renderer.renderizar(arrayTelaInicio);
     }
@@ -39,7 +40,10 @@ public class MenuView {
 
     public void encerrarGame(){
         String[] arrayEncerrarGame = {
-            "Obrigado por jogar!\n",
+            "A floresta finalmente silencia.",
+            "Seus passos cessam, sua jornada termina…",
+            "Entre sombras e sussurros do vento, seu nome se perde na escuridão.",
+            "",
             "Você encerrou o jogo com: "
         };
         renderer.renderizar(arrayEncerrarGame);

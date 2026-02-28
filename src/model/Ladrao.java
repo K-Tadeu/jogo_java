@@ -2,19 +2,23 @@ package model;
 
 import java.util.Random;
 
+import view.Narrador;
+
 public class Ladrao {
 
     private Random gerador = new Random();
+    private Narrador narrador = new Narrador();
     // private String nomeLadrao;
     private int comidaLadrao = 0;
 
     public void roubar(Personagem player1) {
         if (player1.getComida() > 0) {
-            System.out.println("QUE DROGA!!! O ladrão acabou de roubar sua comida!");
+            //System.out.println("QUE DROGA!!! O ladrão acabou de roubar sua comida!");
+            narrador.ladraoRoubarSucesso1(); 
             player1.setComida(player1.getComida() - 1);
             comidaLadrao++;
         } else {
-            System.out.println("O ladrão tentou te roubar, mas voce nao tinha comida");
+            narrador.ladraoRoubarFalha();
         }
     }
 
