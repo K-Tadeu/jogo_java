@@ -7,5 +7,6 @@ public class App {
 
         GameEngine jogo = new GameEngine();
         jogo.run();
+
     }
 }

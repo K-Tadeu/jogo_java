@@ -20,7 +20,11 @@ public class menuView {
 
     public void telaInicio(Personagem player1) {
         String[] arrayTelaInicio = {
-                "Ok, " + player1.getNome() + ", vamos começar!",
+                "Bem-vindo, " + player1.getNome(),
+                "Vamos começar!",
+                separarTela,
+                "Seu único objetivo (por enquanto), é não morrer de fome ou sono.",
+                "Quando fome ou sono chega a 10, você perde vida... Cuidado!",
                 separarTela
         };
         renderer.renderizar(arrayTelaInicio);
@@ -51,8 +55,4 @@ public class menuView {
         };
         renderer.renderizar(arrayGameOver);
     }
-
 }
-
-// System.out.println("Ok, " + player1.getNome() + ", vamos começar");
-// System.out.println("=============================================");

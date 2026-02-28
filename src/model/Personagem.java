@@ -81,7 +81,7 @@ public class Personagem {
         String[] linhas = {
                 "Energia..." + this.energia,
                 "Fome......" + this.fome,
-                "Sono......" + this.fome,
+                "Sono......" + this.sono,
                 "Comida...." + this.comida
         };
         return linhas;

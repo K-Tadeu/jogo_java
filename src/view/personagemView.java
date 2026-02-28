@@ -5,7 +5,7 @@ import service.ConsoleRenderer;
 
 public class personagemView {
 
-    ConsoleRenderer renderer = new ConsoleRenderer(5);
+    ConsoleRenderer renderer = new ConsoleRenderer();
 
     public void dadosPersonagem(Personagem player1) {
         String[] dados = player1.status();
@@ -14,33 +14,10 @@ public class personagemView {
 
     // ----- Ações personagem -----
 
-    // public void telaCacarSucesso(Personagem player1){
-    //     String[] arrayCacarSucesso =  
-    //     {
-    //         player1.getNome() + " está caçando",
-    //         ".",
-    //         ".",
-    //         "."
-    //     };
-    //     renderer.renderizar(arrayCacarSucesso);
-    // }
-
         public void telaCacarSucesso(Personagem player1){
-        String[] arrayCacarSucesso =  
-        {
-            player1.getNome() + " .----------------.  .----------------.  .----------------.  .----------------.  .-----------------. .----------------.  .----------------. ",
-                                "| .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |",
-                                "| |     ______   | || |      __      | || |     ______   | || |      __      | || | ____  _____  | || |  ________    | || |     ____     | |",
-                                "| |   .' ___  |  | || |     /  \\     | || |   .' ___  |  | || |     /  \\     | || ||_   \\|_   _| | || | |_   ___ `.  | || |   .'    `.   | |",
-                                
-
-
-
-        };
-        renderer.renderizar(arrayCacarSucesso);
+        //String[] arrayCacarSucesso =  {}
+        //renderer.renderizar(arrayCacarSucesso);
     }
-
-
 
     public void telaCacarFalha() {
 
