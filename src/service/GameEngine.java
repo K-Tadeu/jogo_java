@@ -57,7 +57,7 @@ public class GameEngine {
                 case "1":
                     boolean sucessoCaca = player1.cacar();
                     if (sucessoCaca) {
-                        personagemView.telaCacarSucesso(player1);
+                        narrador.telaCacarSucesso(player1);
                         turno.avancarTurno();
                         turno.statusTurno();
                     }
@@ -77,7 +77,7 @@ public class GameEngine {
                     }
                     break;
                 case "encerrar":
-                    menu.encerrarGame();
+                    narrador.encerrarGame();
                     jogoAtivo = false;
 
             }

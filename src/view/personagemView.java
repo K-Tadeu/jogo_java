@@ -12,14 +12,4 @@ public class PersonagemView {
         renderer.renderizar(dados);
     }
 
-    // ----- Ações personagem -----
-
-        public void telaCacarSucesso(Personagem player1){
-        //String[] arrayCacarSucesso =  {}
-        //renderer.renderizar(arrayCacarSucesso);
-    }
-
-    public void telaCacarFalha() {
-
-    }
 }

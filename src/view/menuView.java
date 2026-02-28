@@ -10,8 +10,8 @@ public class MenuView {
     public void telaNomePersonagem() {
         
         String[] arrayNomePersonagem = {
-                "Escreva seu nome na história… se conseguir sobreviver.",
-                "\n"
+                "Escreva seu nome na história... se conseguir sobreviver.",
+                ""
         };
         renderer.renderizar(arrayNomePersonagem);
     }
@@ -19,13 +19,10 @@ public class MenuView {
     public void telaInicio(Personagem player1) {
         String[] arrayTelaInicio = {
                 "Muito bem, " + player1.getNome(),
-                "Está preparado?",
-                "",
+                "Está preparado? \n",
                 "Seu único objetivo (por enquanto), é não morrer de fome ou sono.",
-                "Quando fome ou sono chega a 10, você perde vida... Cuidado!",
-                "",
-
-        };
+                "Quando fome ou sono chega a 10, você perde vida... Cuidado!\n",
+            };
         renderer.renderizar(arrayTelaInicio);
     }
 
@@ -36,17 +33,6 @@ public class MenuView {
             "1 = caçar | 2 = comer | 3 = dormir --- encerrar \n"
         };
         renderer.renderizar(arrayOpcaoAcao);
-    }
-
-    public void encerrarGame(){
-        String[] arrayEncerrarGame = {
-            "A floresta finalmente silencia.",
-            "Seus passos cessam, sua jornada termina…",
-            "Entre sombras e sussurros do vento, seu nome se perde na escuridão.",
-            "",
-            "Você encerrou o jogo com: "
-        };
-        renderer.renderizar(arrayEncerrarGame);
     }
 
     public void gameOver() {
