@@ -7,7 +7,7 @@ import util.Pausas;
 public class Personagem {
     Random gerador = new Random();
     private String nome;
-    private int energia = 5;
+    private int estamina = 5;
     private int fome = 5;
     private int sono = 5;
     private int comida = 0;
@@ -17,8 +17,8 @@ public class Personagem {
 
     public boolean cacar() {
 
-        if (energia >= 2) {
-            energia -= 2;
+        if (estamina >= 2) {
+            estamina -= 2;
             comida += gerador.nextInt(1, 3);
             fome = Math.min(fome + 1, 10);
             sono = Math.min(sono + 1, 10);
@@ -32,7 +32,7 @@ public class Personagem {
         if (sono >= 1) {
             System.out.println(nome + " esta dormindo...");
             sono--;
-            energia = energia + 1 <= 10 ? energia + 1 : 10;
+            estamina = estamina + 1 <= 10 ? estamina + 1 : 10;
             Pausas.pausar(1800);
             return true;
         } else {
@@ -50,7 +50,7 @@ public class Personagem {
             --fome;
             --comida;
             Pausas.pausar(1800);
-            energia = Math.min(energia + 1, 10);
+            estamina = Math.min(estamina + 1, 10);
             return true;
         }
     }
@@ -59,7 +59,7 @@ public class Personagem {
 
     public void verificarCondicoes(Personagem player1) {
 
-        if (energia < 0) {
+        if (estamina < 0) {
             vida -= 10;
         } else if (fome == 10) {
             vida -= 20;
@@ -74,7 +74,7 @@ public class Personagem {
 
     public String[] status() {
         String[] linhas = {
-                "Energia..." + this.energia,
+                "estamina..." + this.estamina,
                 "Fome......" + this.fome,
                 "Sono......" + this.sono,
                 "Comida...." + this.comida + "\n"
@@ -92,8 +92,8 @@ public class Personagem {
         return comida;
     }
 
-    public int getEnergia() {
-        return energia;
+    public int getEstamina() {
+        return estamina;
     }
 
     public int getFome() {
@@ -114,8 +114,8 @@ public class Personagem {
         this.comida = comida;
     }
 
-    public void setEnergia(int energia) {
-        this.energia = energia;
+    public void setEstamina(int estamina) {
+        this.estamina = estamina;
     }
 
     public void setFome(int fome) {
